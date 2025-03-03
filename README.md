@@ -42,7 +42,7 @@ The demo showcases:
 
 1. **Clone the Repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Shravya016/assignment.git
    cd video-recommendation-engine
    ```
 
@@ -60,9 +60,9 @@ The demo showcases:
 4. **Configure Environment Variables**
    Create a `.env` file in the root directory with the following content:
    ```
-   FLIC_TOKEN=your_flic_token
+   FLIC_TOKEN=flic_11d3da28e403d182c36a3530453e290add87d0b4a40ee50f17611f180d47956f
    API_BASE_URL=https://api.socialverseapp.com
-   DATABASE_URL=sqlite:///./video_recommendation.db
+   DATABASE_URL=sqlite:///./video_recommendation.db 
    ```
 
 5. **Start the Server**
@@ -154,13 +154,6 @@ Once the server is running, you can access the interactive API documentation at:
 - Input validation and sanitization
 - Rate limiting implemented
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ## 📄 License
 
