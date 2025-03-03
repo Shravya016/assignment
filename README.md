@@ -11,6 +11,19 @@ A sophisticated recommendation system that suggests personalized video content b
 - Efficient data caching and pagination
 - Real-time API integration with Empowerverse platform
 
+## 🎥 Demo
+
+Check out this video demonstration of our API endpoints in action:
+
+https://github.com/[your-username]/[repository-name]/blob/main/demo/Screen%20Recording%202025-03-03%20130819.mp4
+
+The demo showcases:
+- Authentication using Flic-Token
+- Fetching personalized video recommendations
+- Getting trending videos
+- Retrieving mood-based recommendations
+- Interacting with user and video endpoints
+
 ## 🛠️ Technology Stack
 
 - **Backend Framework**: FastAPI
