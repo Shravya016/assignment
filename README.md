@@ -15,7 +15,7 @@ A sophisticated recommendation system that suggests personalized video content b
 
 Check out this video demonstration of our API endpoints in action:
 
-https://github.com/[your-username]/[repository-name]/blob/main/demo/Screen%20Recording%202025-03-03%20130819.mp4
+https://github.com/Shravya016/assignment/blob/main/demo/Screen%20Recording%202025-03-03%20130819.mp4
 
 The demo showcases:
 - Authentication using Flic-Token
