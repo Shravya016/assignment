@@ -1,0 +1,509 @@
+{
+	"info": {
+		"_postman_id": "a1b2c3d4-e5f6-g7h8-i9j0-k1l2m3n4o5p6",
+		"name": "Video Recommendation Engine",
+		"description": "API collection for the Video Recommendation Engine",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Recommendations",
+			"item": [
+				{
+					"name": "Get Personalized Feed",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Flic-Token",
+								"value": "{{flic_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/feed?username=john_doe&page=1&page_size=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"feed"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "john_doe"
+								},
+								{
+									"key": "category_id",
+									"value": "motivation",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "page_size",
+									"value": "10"
+								}
+							]
+						},
+						"description": "Get personalized video recommendations for a user"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Trending Videos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Flic-Token",
+								"value": "{{flic_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/trending?timeframe=day&page=1&page_size=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"trending"
+							],
+							"query": [
+								{
+									"key": "timeframe",
+									"value": "day",
+									"description": "hour, day, week, month"
+								},
+								{
+									"key": "category_id",
+									"value": "fitness",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "page_size",
+									"value": "10"
+								}
+							]
+						},
+						"description": "Get trending videos based on recent engagement"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Mood-Based Recommendations",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Flic-Token",
+								"value": "{{flic_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/mood-based?mood=motivated&page=1&page_size=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"mood-based"
+							],
+							"query": [
+								{
+									"key": "mood",
+									"value": "motivated",
+									"description": "happy, sad, motivated, stressed, relaxed"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "page_size",
+									"value": "10"
+								}
+							]
+						},
+						"description": "Get mood-based video recommendations"
+					},
+					"response": []
+				},
+				{
+					"name": "Record Interaction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Flic-Token",
+								"value": "{{flic_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/interaction?username=john_doe&video_external_id=vid_001&interaction_type=view",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"interaction"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "john_doe"
+								},
+								{
+									"key": "video_external_id",
+									"value": "vid_001"
+								},
+								{
+									"key": "interaction_type",
+									"value": "view",
+									"description": "view, like, inspire, rate"
+								},
+								{
+									"key": "value",
+									"value": "4.5",
+									"description": "Required for 'rate' interaction type",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Record a user interaction with a video"
+					},
+					"response": []
+				}
+			],
+			"description": "Recommendation API endpoints"
+		},
+		{
+			"name": "Data Collection",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Flic-Token",
+								"value": "{{flic_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/users?skip=0&limit=20",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								}
+							]
+						},
+						"description": "Get all users with pagination"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User by Username",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Flic-Token",
+								"value": "{{flic_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/users/john_doe",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"john_doe"
+							]
+						},
+						"description": "Get user by username"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Videos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Flic-Token",
+								"value": "{{flic_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/videos?skip=0&limit=20",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"videos"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								}
+							]
+						},
+						"description": "Get all videos with pagination"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Videos by Category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Flic-Token",
+								"value": "{{flic_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/videos/category/motivation?skip=0&limit=20",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"videos",
+								"category",
+								"motivation"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								}
+							]
+						},
+						"description": "Get videos by category"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Video by External ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Flic-Token",
+								"value": "{{flic_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/videos/vid_001",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"videos",
+								"vid_001"
+							]
+						},
+						"description": "Get video by external ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Latest Interactions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Flic-Token",
+								"value": "{{flic_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/interactions?limit=20",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"interactions"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "20"
+								}
+							]
+						},
+						"description": "Get latest interactions across all users and videos"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Interaction History",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Flic-Token",
+								"value": "{{flic_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/users/john_doe/interactions?limit=50",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"john_doe",
+								"interactions"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "50"
+								}
+							]
+						},
+						"description": "Get a user's interaction history"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Video Interaction Stats",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Flic-Token",
+								"value": "{{flic_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/videos/vid_001/stats",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"videos",
+								"vid_001",
+								"stats"
+							]
+						},
+						"description": "Get interaction statistics for a video"
+					},
+					"response": []
+				}
+			],
+			"description": "Data collection API endpoints"
+		},
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/health",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"health"
+					]
+				},
+				"description": "Check if the API is running"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000",
+			"type": "string"
+		},
+		{
+			"key": "flic_token",
+			"value": "flic_11d3da28e403d182c36a3530453e290add87d0b4a40ee50f17611f180d47956f",
+			"type": "string"
+		}
+	]
+} 
